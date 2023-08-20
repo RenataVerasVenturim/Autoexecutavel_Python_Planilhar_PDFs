@@ -4,7 +4,6 @@ import openpyxl
 from flask import Flask, request, render_template, send_file, redirect, url_for
 import shutil
 import threading
-import sys
 import webbrowser
 
 app = Flask(__name__)
@@ -40,11 +39,11 @@ def index():
         copied_filename = "Consolidado.xlsx"
         copy_path = os.path.join(directory_path, copied_filename)
         shutil.copy(excel_path, copy_path)
-        print('Cópia criada')
+        print('Cópia da pasta modelo do excel criada')
 
         copied_workbook = openpyxl.load_workbook(copy_path)
         copied_sheet = copied_workbook.active
-        print('Cópia aberta')
+        print('Excel aberto para inserção dos dados')
 
         start_row = 2
 
@@ -63,18 +62,19 @@ def index():
                 
                 element = pdf.pq('LTTextLineHorizontal:in_bbox("%s, %s, %s, %s")' % (target_left, target_top, target_left + target_width, target_top + target_height))
                 text = element.text().strip()
-                
                 copied_sheet.cell(row=start_row + i, column=j+1).value = text
+                
 
         copied_workbook.save(copy_path)
         copied_workbook.close()
-        print("Dados inseridos na planilha copiada.")
+        print("Dados inseridos na planilha.")
 
         return redirect(url_for('download_excel'))
 
     return render_template('index.html')
 @app.route('/download_excel', methods=['GET'])
 def download_excel():
+    print('Download iniciado')
     directory_path = os.path.dirname(os.path.abspath(__file__))
     copied_filename = "Consolidado.xlsx"
     copied_path = os.path.join(directory_path, copied_filename)
@@ -89,22 +89,11 @@ if __name__ == '__main__':
     empty_pdfs_folder(pdfs_directory)
     
     # Abre automaticamente o navegador ao executar o programa
-    webbrowser.open('http://localhost:5000')  
+    webbrowser.open('http://localhost:5000') 
+    print('Servidor iniciado na porta http://localhost:5000 !') 
 
     # Iniciar o servidor Flask em um thread separado
     flask_thread = threading.Thread(target=app.run)
     flask_thread.start()
     flask_thread.join()
-
-    directory_path = os.path.dirname(os.path.abspath(__file__))
-    copied_filename = "Consolidado.xlsx"
-    copied_path = os.path.join(directory_path, copied_filename)
-    os.remove(copied_path)
-    print("Cópia excluída.")
-
-    pdfs_directory = os.path.join(directory_path, 'pdfs')
-    for filename in os.listdir(pdfs_directory):
-        file_path = os.path.join(pdfs_directory, filename)
-        if os.path.isfile(file_path):
-            os.remove(file_path)
-    print("Pasta 'pdfs' esvaziada.")
+    
