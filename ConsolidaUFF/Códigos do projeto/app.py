@@ -32,7 +32,7 @@ def index():
             {'left': 41.0, 'top': 418.52, 'width': 374.62, 'height': 10.0},
             {'left': 421.0, 'top': 642.52, 'width': 50.02, 'height': 10.0},
             {'left': 200.0, 'top': 464.52, 'width': 139.57, 'height': 10.0},
-            {'left': 200.0, 'top': 503.52, 'width': 55.6, 'height': 10.0},
+            {'left': 200.0, 'top': 503.52, 'width': 56.7, 'height': 10.0},
             {'left': 43.0, 'top': 627.52, 'width': 387.29, 'height': 10.0}
         ]
         
