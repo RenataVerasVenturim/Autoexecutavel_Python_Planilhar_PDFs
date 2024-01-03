@@ -30,11 +30,12 @@ def index():
         coordinates = [
             {'left': 200.0, 'top': 549.52, 'width': 16.68, 'height': 10.0},    # Coordenadas do final do número de empenho
             {'left': 41.0, 'top': 418.52, 'width': 374.62, 'height': 10.0},    # Coordenadas do fornecedor (nome e CNPJ) da nota de empenho
-            {'left': 421.0, 'top': 642.52, 'width': 50.02, 'height': 10.0},    # Coordenadas do valor da nota de empenho 
-            {'left': 200.0, 'top': 464.52, 'width': 139.57, 'height': 10.0},   # Coordenadas do número do processo
+            {'left': 421.0, 'top': 642.52, 'width': 50.02, 'height': 10.0},    # Coordenadas do valor da nota de empenho
+            {'left': 200.0, 'top': 464.52, 'width': 139.57, 'height': 10.0},   #Coordenadas do número do processo
             {'left': 200.0, 'top': 503.52, 'width': 56.7, 'height': 10.0},     # Coordenadas da fonte de despesa
-            {'left': 43.0, 'top': 627.52, 'width': 387.29, 'height': 10.0},    # Coordenadas da natureza da despesa  
-            {'left': 125.0, 'top': 306.52, 'width': 122.66, 'height': 10.0}    # Modalidade da licitação
+            {'left': 43.0, 'top': 627.52, 'width': 387.29, 'height': 10.0},    # Coordenadas da natureza da despesa
+            {'left': 125.0, 'top': 306.52, 'width': 122.66, 'height': 10.0} ,   # Modalidade da licitação
+            {'left': 296.0, 'top': 503.52, 'width': 33.36, 'height': 10.0}    # Natureza da despesa
         ]
         
         copied_filename = "Consolidado.xlsx"
