@@ -35,7 +35,10 @@ def index():
             {'left': 200.0, 'top': 503.52, 'width': 56.7, 'height': 10.0},     # Coordenadas da fonte de despesa
             {'left': 43.0, 'top': 627.52, 'width': 387.29, 'height': 10.0},    # Coordenadas da natureza da despesa
             {'left': 125.0, 'top': 306.52, 'width': 122.66, 'height': 10.0} ,   # Modalidade da licitação
-            {'left': 296.0, 'top': 503.52, 'width': 33.36, 'height': 10.0}    # Natureza da despesa
+            {'left': 122.0, 'top': 503.52, 'width': 33.36, 'height': 10.0} ,   # Coordenadas do PTRES        
+            {'left': 296.0, 'top': 503.52, 'width': 33.36, 'height': 10.0} ,   # Coordenadas do nº da natureza da despesa
+            {'left': 485.0, 'top': 503.52, 'width': 73.88, 'height': 10.0} ,   # Coordenadas do plano interno
+ 
         ]
         
         copied_filename = "Consolidado.xlsx"
